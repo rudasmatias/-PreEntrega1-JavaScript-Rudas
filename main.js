@@ -2,7 +2,43 @@
 //Vamos a utilizar en esta 1era pre entrega , alert para mostrar información, y prompt para recibir datos (en forma de strings)
 //Como es el nombre de una variable utilizo el fomrato lowerCamelCase
 
-function comprar() {}
+function comprar() {
+  let destinoJujuy = 200;
+  let detinoMendoza = 400;
+  let destinoTierraDelFuego = 600;
+  let ctdadPasajeros = 0;
+
+  var destino = prompt(
+    "Tenemos 3 destinos posibles!!\nJujuy\nMendoza\nTierra Del Fuego\nEscribe el destino al que quieres ir: "
+  );
+
+  function destinoElegido() {
+    if (destino === "Jujuy") {
+      alert("El precio por persona es de $" + destinoJujuy);
+      return destinoJujuy;
+    } else if (destino === "Mendoza") {
+      alert("El precio por persona es de $" + detinoMendoza);
+      return detinoMendoza;
+    } else if (destino === "Tierra Del Fuego") {
+      alert("El precio por persona es de $" + destinoTierraDelFuego);
+      return destinoTierraDelFuego;
+    } else {
+      destino = prompt(
+        "Lo siento, no es un destino disponible.\nIngrese el destino nuevamente: "
+      );
+      destinoElegido();
+    }
+  }
+
+  let suDestino = destinoElegido();
+  let ctdadPasajerosString = prompt(
+    "Ahora indique cuantos pasajeros quieren viajar:"
+  );
+
+  ctdadPasajeros = Number(ctdadPasajerosString);
+  let totalViaje = ctdadPasajeros * suDestino;
+  return totalViaje;
+}
 
 function consultarPrecios() {}
 
@@ -14,7 +50,11 @@ function mostarMenu(numMenu) {
   switch (numMenu) {
     case 1:
       alert("A continuación accederemos a realizar la compra");
-      comprar();
+      var suCompra = comprar();
+      alert(
+        "El total de su compra para la cantidad de pasajeros elegidos es de: $" +
+          suCompra
+      );
       break;
     case 2:
       alert("A continuación accederemos a consultar los precios");

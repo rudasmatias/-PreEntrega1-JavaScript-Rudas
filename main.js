@@ -3,30 +3,38 @@
 //Como es el nombre de una variable utilizo el fomrato lowerCamelCase
 
 function comprar() {
-  let destinoJujuy = 200;
-  let detinoMendoza = 400;
-  let destinoTierraDelFuego = 600;
+  let valorDestinoJujuy = 200;
+  let valorDestinoMendoza = 400;
+  let valorDestinoTierraDelFuego = 600;
   let ctdadPasajeros = 0;
 
-  var destino = prompt(
-    "Tenemos 3 destinos posibles!!\nJujuy\nMendoza\nTierra Del Fuego\nEscribe el destino al que quieres ir: "
-  );
-
   function destinoElegido() {
-    if (destino === "Jujuy") {
-      alert("El precio por persona es de $" + destinoJujuy);
-      return destinoJujuy;
-    } else if (destino === "Mendoza") {
-      alert("El precio por persona es de $" + detinoMendoza);
-      return detinoMendoza;
-    } else if (destino === "Tierra Del Fuego") {
-      alert("El precio por persona es de $" + destinoTierraDelFuego);
-      return destinoTierraDelFuego;
+    var destino = prompt(
+      "Tenemos 3 destinos posibles!!\nJujuy\nMendoza\nTierra Del Fuego\nEscribe el destino al que quieres ir: "
+    );
+    if (destino === "Jujuy" || destino === "jujuy" || destino === "JUJUY") {
+      alert("El precio por persona es de $" + valorDestinoJujuy);
+      return valorDestinoJujuy;
+    } else if (
+      destino === "Mendoza" ||
+      destino === "mendoza" ||
+      destino === "MENDOZA"
+    ) {
+      alert("El precio por persona es de $" + valorDestinoMendoza);
+      return valorDestinoMendoza;
+    } else if (
+      destino === "Tierra Del Fuego" ||
+      destino === "tierra del fuego" ||
+      destino === "TIERRA DEL FUEGO" ||
+      destino === "Tierra del Fuego"
+    ) {
+      alert("El precio por persona es de $" + valorDestinoTierraDelFuego);
+      return valorDestinoTierraDelFuego;
     } else {
-      destino = prompt(
+      alert(
         "Lo siento, no es un destino disponible.\nIngrese el destino nuevamente: "
       );
-      destinoElegido();
+      return destinoElegido();
     }
   }
 
@@ -40,9 +48,16 @@ function comprar() {
   return totalViaje;
 }
 
-function consultarPrecios() {}
+function consultarPrecios() {
+  alert(
+    "Los destinos disponibles son:\nJujuy: $200 por persona\nMendoza: $400 por persona\nTierra Del Fuego: $600 por persona"
+  );
+}
 
-function mostrarPromociones() {}
+function mostrarPromociones() {
+  alert("No hay promociones por el momento");
+  alert("Desea volver al menú principal?");
+}
 
 function mostrarComprasRealizadas() {}
 
@@ -52,8 +67,9 @@ function mostarMenu(numMenu) {
       alert("A continuación accederemos a realizar la compra");
       var suCompra = comprar();
       alert(
-        "El total de su compra para la cantidad de pasajeros elegidos es de: $" +
-          suCompra
+        "El total del pedido para la cantidad de pasajeros indicada es de: $" +
+          suCompra +
+          ".\nMuchas gracias por su compra."
       );
       break;
     case 2:

@@ -5,10 +5,16 @@
 }
 
 body {
-  background-color: rgb(177, 179, 173);
+  background-color: rgb(222, 249, 167);
 }
-body h1 {
+body section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+body section .class__h1 {
   color: blue;
+  text-align: center;
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,8 +5,14 @@
 }
 
 body {
-  background-color: rgb(177, 179, 173);
-  h1 {
-    color: blue;
+  background-color: rgb(222, 249, 167);
+  section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .class__h1 {
+      color: blue;
+      text-align: center;
+      font-size: 3rem;
+    }
   }
 }

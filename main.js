@@ -2,6 +2,18 @@
 //Vamos a utilizar en esta 1era pre entrega , alert para mostrar información, y prompt para recibir datos (en forma de strings)
 //Como es el nombre de una variable utilizo el fomrato lowerCamelCase
 
+function retornoPrincipal() {
+  let confirmacionString = prompt(
+    "Desea volver al menú principal?\nPara SI: presione 1\nPara NO: presione 0"
+  );
+  //El 0 o 1 en el prompt lo toma como bolean
+  if (confirmacionString == true) {
+    return main();
+  } else {
+    return mostarMenu(5);
+  }
+}
+
 function comprar() {
   let valorDestinoJujuy = 200;
   let valorDestinoMendoza = 400;
@@ -52,11 +64,12 @@ function consultarPrecios() {
   alert(
     "Los destinos disponibles son:\nJujuy: $200 por persona\nMendoza: $400 por persona\nTierra Del Fuego: $600 por persona"
   );
+  retornoPrincipal();
 }
 
 function mostrarPromociones() {
   alert("No hay promociones por el momento");
-  let confirmacionString = prompt(
+  /*   let confirmacionString = prompt(
     "Desea volver al menú principal?\nPara SI: presione 1\nPara NO: presione 0"
   );
   //El 0 o 1 en el prompt lo toma como bolean
@@ -64,11 +77,13 @@ function mostrarPromociones() {
     return main();
   } else {
     return mostarMenu(5);
-  }
+  } */
+  retornoPrincipal();
 }
 
 function mostrarComprasRealizadas() {
   alert("No es posible mostrar los datos"); //Más adelante cuando vea arrays, la idea es guardar objetos del tipo nombre, destino, gasto tota en arrays.
+  retornoPrincipal();
 }
 
 function mostarMenu(numMenu) {
@@ -81,6 +96,7 @@ function mostarMenu(numMenu) {
           suCompra +
           ".\nMuchas gracias por su compra."
       );
+      retornoPrincipal();
       break;
     case 2:
       alert("A continuación accederemos a consultar los precios");

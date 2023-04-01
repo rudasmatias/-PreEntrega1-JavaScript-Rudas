@@ -6,7 +6,7 @@
 
 body {
   background-color: rgb(222, 249, 167);
-  background-image: url(/img/imagen\ avion.jpg);
+  background-image: url(../img/imagenavion.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

@@ -56,10 +56,20 @@ function consultarPrecios() {
 
 function mostrarPromociones() {
   alert("No hay promociones por el momento");
-  alert("Desea volver al menú principal?");
+  let confirmacionString = prompt(
+    "Desea volver al menú principal?\nPara SI: presione 1\nPara NO: presione 0"
+  );
+  //El 0 o 1 en el prompt lo toma como bolean
+  if (confirmacionString == true) {
+    return main();
+  } else {
+    return mostarMenu(5);
+  }
 }
 
-function mostrarComprasRealizadas() {}
+function mostrarComprasRealizadas() {
+  alert("No es posible mostrar los datos"); //Más adelante cuando vea arrays, la idea es guardar objetos del tipo nombre, destino, gasto tota en arrays.
+}
 
 function mostarMenu(numMenu) {
   switch (numMenu) {
